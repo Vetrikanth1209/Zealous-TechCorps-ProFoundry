@@ -45,7 +45,7 @@ export default function ZealousSignIn() {
     setShowPassword((prev) => !prev)
   }
 
-  const validateForm = () => {
+  const validateForm = () =>{
     const newErrors = {
       email: email.trim() === "",
       password: password.trim() === "",
@@ -69,7 +69,7 @@ export default function ZealousSignIn() {
     try {
       const data = await signIn(userData);
       if (data) {
-        sessionStorage.setItem("true", JSON.stringify(data));
+        sessionStorage.setItem("isLoggedIn", "true");
         window.location.assign("/landing");
       }
     } catch (error) {

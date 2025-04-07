@@ -13,14 +13,14 @@ import McqTest from "./pages/McqTest";
 import InstructionsPage from "./pages/Info";
 
 const App = () => {
-  const isLoggedIn = sessionStorage.getItem("true");
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
 
   return (
     <Router>
       <Routes>
         {isLoggedIn ? (
           <>
-            <Route path="/" element={<StudentDashboard />} />
+            <Route path="/landing" element={<StudentDashboard />} />
             <Route path="/test-modules" element={<TestModule />} />
             <Route path="/test-intro/:testId" element={<TestIntro />} />
             <Route path="/test-details/:testId" element={<TestDetails />} />
